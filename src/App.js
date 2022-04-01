@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useReducer } from "react";
+
+import ToDoList from "./components/ToDoList/ToDoList";
+import ToDoForm from "./components/ToDoForm/ToDoForm";
+import ToDoMessage from "./components/ToDoMessage/ToDoMessage";
+import Modal from "./components/Modal/Modal";
+
+import { defaultState, reducer } from "./state/state";
+
+import "./App.css";
 
 function App() {
+
+  const [state, dispatch] = useReducer(reducer, defaultState);
+
+  useEffect(() => {
+    localStorage.setItem("toDos", JSON.stringify(state.toDos));
+  }, [state.toDos]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {state.isModalShown && (
+        <Modal dispatch={dispatch} deleteId={state.deleteId} />
+      )}
+
+      <ToDoForm dispatch={dispatch} toDos={state.toDos} />
+      
+      {state.toDos.length === 0 ? (
+        <ToDoMessage />
+      ) : (
+        <ToDoList
+          toDos={
+            state.toggleIsCompleted
+              ? state.toDos.filter((toDo) => !toDo.isCompleted)
+              : state.toDos
+          }
+          dispatch={dispatch}
+        />
+      )}
     </div>
   );
 }

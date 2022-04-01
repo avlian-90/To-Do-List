@@ -1,38 +1,268 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+  font-style: normal;
+}
+.modal {
+    background-color: white;
+    width: 324px;
+    height: 140px;
+    border-radius: 4px;
+}
+.portal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+.completed p {
+    color: #ACACAC;
+}
+.completed:hover {
+    background-color: #F6F6F6;
+}
+input[type=checkbox] {
+    border: 1px solid #008594;
+}
+.hide {
+    width: 145px;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-left: 12px;
+}
+.header {
+    margin-top: 146px 204px 0 1058px;
+}
+.todoform1 {
+    margin-top: 256px;
+    margin-left: 80px;
+}
+.todoform2 {
+    margin-top: 56px;
+    margin-left: 80px;
+}
+form p {
+    width: 46px;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+}
+.valid, .valid:focus {
+    height: 52px;
+    width: 954px;
+    border-radius: 4px;
+    border: 1px solid #FFCD04;
+    outline: none;
+    box-sizing: border-box;
+    padding: 13px 16px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #666666;
+}
+.todoform1 button, .todoform2 button {
+    width: 100px;
+    height: 52px;
+    background: #008594;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-left: 24px;
+    cursor: pointer;
+}
+.baseline, .header label {
+    display: flex;
+    justify-content: baseline;
+}
+.valid::placeholder {
+    width: 92px;
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #DFDFDF;
+    letter-spacing: 0.5;
+}
+.completed, .uncompleted {
+    padding-left: 83px;
+    width: 100%;  
+}
+hr {
+    color: #E5E5E5;
+    width: 1170px;
+}
+.todoContainer {
+    margin-top: 62px;
+}
+.completed p, .uncompleted p {
+    display: inline-block;
+    width: 673.54px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #666666;
+    margin: 20px 397.87px 20px 35px;
+}
+.uncompleted:hover {
+    background-color: #F6F6F6;
+}
+.invalid {
+    border: 1px solid #FF3104;
+    height: 52px;
+    width: 954px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 13px 16px;
+    outline: none;
+}
+.hidden {
+    display: none;
+}
+.portal p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #008594;
+    text-align: center;
+}
+.modalContent div {
+    text-align: center;
+    margin-top: 30px;
+}
+.yes {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #174348;
+    cursor: pointer;
+}
+.no {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #174348;
+    margin-left: 40.5px;
+    cursor: pointer;
+}
+.modalContent {
+    margin: 27px 14px;
+}
+.first {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.2px;
+    color: #ACACAC;
+    text-align: center;
+    margin-top: 140px;
+}
+.second {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    color: #666666;
+    text-align: center;
+}
+.error {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FF3104;
+    width: 271px;
+}
+.deleteBtn {
+    cursor: pointer;
+}
+.header label {
+    margin-left: 1075px;
+    margin-top: 149.98px;
+}
+@media screen and (max-width: 376px) {
+    .valid, .valid:focus {
+        height: 44px;
+        width: 327px;
+    }
+    .invalid {
+        height: 44px;
+        width: 327px;
+    }
+    .todoform1 button, .todoform2 button {
+        width: 92px;
+        height: 44px;
+    }
+    .first {
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.2px;
+    }
+    .second {
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0.2px;
+    }
+    .completed p, .uncompleted p {
+        display: inline-block;
+        width: 270px;
+        height: 54px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        color: #666666;
+        margin: 20px 6.41px 20px 11px;
+    }
+    hr {
+        width: 327px;
+    }
+    .completed, .uncompleted {
+        padding-left: 27px;
+        width: 100%;  
+    }
+    .hide {
+        width: 135px;
+        font-size: 16px;
+    }
+    .header {
+        margin-top: 146px 24px 0 216px;
+    }
+    .todoform1 {
+        margin-top: 195px;
+        margin-left: 24px;
+    }   
+    .todoform2 {
+        margin-top: 80px;
+        margin-left: 24px;
+    }   
+    .header label {
+        margin-left: 217px;
+        margin-top: 92.25px;
+    }
+    form p {
+        width: 38px;
+        font-size: 16x;
+    }
+    .valid::placeholder {
+        width: 67px;
+        font-size: 12px;
+    }
+    .baseline {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .baseline button {
+        margin-left: 237px;
+        margin-top: 16px;
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
